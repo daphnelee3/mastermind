@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { PlayerInput } from './PlayerInput'
 
 export default class Mastermind extends Component {
     constructor(props) {
         super(props)
         this.state = {
             winningCombination: '',
+            currentGuess: [0, 0, 0, 0],
             attempts: 0,
             previousAttempts: [],
             status: '', //win, lose, playing
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     async componentDidMount() {
@@ -24,12 +28,23 @@ export default class Mastermind extends Component {
         }
     }
 
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.setState({});
+    }
+
     render() {
-        const { winningCombination, attempts, previousAttempts, status } = this.state
-        console.log(typeof winningCombination, winningCombination)
+        const { winningCombination, currentGuess, attempts, previousAttempts, status } = this.state
         return (
             <div>
                 <div >{winningCombination} correct combo test</div>
+                <PlayerInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
             </div>
         )
     }
