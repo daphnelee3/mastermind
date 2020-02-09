@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const NumberSelects = ({ handleChange }) => {
+export const NumberSelectors = ({ handleChange, guessIdx }) => {
     return (
-        <select name="integers" onChange={handleChange}>
+        <select name="integers" onChange={(e) => handleChange(guessIdx, e)}>
             <option value="">Please select a number</option>
             <option value="0">0</option>
             <option value="1">1</option>

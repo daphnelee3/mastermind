@@ -1,14 +1,13 @@
 import React from 'react'
-import { NumberSelects } from './NumberSelects'
+import { NumberSelectors } from './NumberSelectors'
 
 export const PlayerInput = ({ currentGuess, handleChange, handleSubmit }) => {
     console.log('something CHANGED')
     return (
         <div>
-            <NumberSelects handleChange={handleChange} />
-            <NumberSelects handleChange={handleChange} />
-            <NumberSelects handleChange={handleChange} />
-            <NumberSelects handleChange={handleChange} />
+            {currentGuess.map((digit, idx) => (
+                <NumberSelectors key={idx} guessIdx={idx} handleChange={handleChange} />
+            ))}
             <button className="button" onClick={handleSubmit}>submit</button>
         </div>
     )

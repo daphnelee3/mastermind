@@ -7,8 +7,8 @@ export default class Mastermind extends Component {
         super(props)
         this.state = {
             winningCombination: '',
-            currentGuess: [0, 0, 0, 0],
-            attempts: 0,
+            currentGuess: [null, null, null, null],
+            attempts: 10,
             previousAttempts: [],
             status: '', //win, lose, playing
         }
@@ -28,12 +28,13 @@ export default class Mastermind extends Component {
         }
     }
 
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value,
-        });
+    handleChange(guessIdx, event) {
+        const newGuess = this.state.currentGuess.slice()
+        newGuess[guessIdx] = parseInt(event.target.value)
+        this.setState({ currentGuess: newGuess })
     }
 
+    //if num not selected, prompt to select one
     handleSubmit(event) {
         event.preventDefault();
         this.setState({});
@@ -41,10 +42,15 @@ export default class Mastermind extends Component {
 
     render() {
         const { winningCombination, currentGuess, attempts, previousAttempts, status } = this.state
+        console.log(currentGuess)
         return (
             <div>
-                <div >{winningCombination} correct combo test</div>
-                <PlayerInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+                <div >{winningCombination} correct combo</div>
+                <div >{attempts} attempts remaining</div>
+                <PlayerInput
+                    currentGuess={currentGuess}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit} />
             </div>
         )
     }
