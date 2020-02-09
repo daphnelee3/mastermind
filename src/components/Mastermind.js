@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { PlayerInput } from './PlayerInput'
+import { History } from './History'
 
 export default class Mastermind extends Component {
     constructor(props) {
@@ -67,8 +68,8 @@ export default class Mastermind extends Component {
         }
         if (hasWon === true) {
             this.setState({ status: 'won' });
-        } else if (attempts === 1) {
-            this.setState({ status: 'lost' });
+        } else if (attempts <= 1) {
+            this.setState({ status: 'lost', attempts: 0 });
         } else {
             const history = {};
             let message;
@@ -87,7 +88,7 @@ export default class Mastermind extends Component {
             }
             history.feedback = message;
             history.guess = currentGuess;
-            console.log(history)
+            console.log('HISTORY', history)
             //decrement attempts remaining and build history
             this.setState(prevState => {
                 return {
@@ -113,6 +114,8 @@ export default class Mastermind extends Component {
                     handleGuess={this.handleGuess}
                     handleSubmit={this.handleSubmit} />
                 {invalidGuess === true ? <div> Invalid Selection. Please Choose 4 Numbers!</div> : ''}
+                <History
+                    previousAttempts={previousAttempts} />
             </div>
         )
     }
