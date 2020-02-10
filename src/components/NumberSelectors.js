@@ -2,7 +2,7 @@ import React from 'react'
 
 export const NumberSelectors = ({ handleGuess, guessIdx }) => {
     return (
-        <select className="selectButton" name="integers" onChange={(e) => handleGuess(guessIdx, e)}>
+        <select className="select-button" name="integers" onChange={(e) => handleGuess(guessIdx, e)}>
             <option value="">Please select a number</option>
             <option value="0">0</option>
             <option value="1">1</option>

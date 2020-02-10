@@ -90,7 +90,6 @@ export default class Mastermind extends Component {
             //populates history obj
             history.feedback = message;
             history.guess = currentGuess;
-            console.log('HISTORY', history)
 
             //decrement attempts remaining and builds previousAttempts array
             this.setState(prevState => {
@@ -99,6 +98,7 @@ export default class Mastermind extends Component {
                     previousAttempts: [...prevState.previousAttempts, history]
                 }
             });
+            console.log(winningCombination)
         }
 
 
@@ -106,11 +106,11 @@ export default class Mastermind extends Component {
 
     render() {
         const { winningCombination, currentGuess, attempts, previousAttempts, status, invalidGuess } = this.state
-        console.log(currentGuess, previousAttempts)
         return (
             <div>
+                <h1>MASTERMIND</h1>
                 <div>{winningCombination} correct combo</div>
-                <div>{attempts} Attempts Remaining</div>
+                <div className="attempts-left">{attempts} Attempts Remaining</div>
                 {status === 'won' ? <div> You Got It! <span role="img" aria-label="celebrate">🥳</span></div> : null}
                 {status === 'lost' ? <div>Better Luck Next Time</div> : null}
 
