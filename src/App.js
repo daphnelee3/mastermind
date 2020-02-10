@@ -13,11 +13,11 @@ function App() {
         </div>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/daphnelee3/mastermind"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          See How This Game Was Built
         </a>
       </header>
     </div>

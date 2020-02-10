@@ -7,7 +7,7 @@ export const PlayerInput = ({ currentGuess, handleGuess, handleSubmit }) => {
             {currentGuess.map((digit, idx) => (
                 <NumberSelectors key={idx} guessIdx={idx} handleGuess={handleGuess} />
             ))}
-            <button className="button" onClick={handleSubmit}>submit</button>
+            <button className="submitButton" onClick={handleSubmit}>submit</button>
         </div>
     )
 }

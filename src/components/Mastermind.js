@@ -36,17 +36,16 @@ export default class Mastermind extends Component {
         this.setState({ currentGuess: newGuess })
     }
 
-    //order of submit: won?
     //vvv separate into multiple methods to call
     //decrement attempts, currentGuess & msg into previousAttempts, check status, reset currentGuess
     //push feedback in previousAttempts
     handleSubmit(event) {
-        const { attempts, winningCombination, currentGuess, status, previousAttempts } = this.state;
+        const { attempts, winningCombination, currentGuess } = this.state;
         event.preventDefault();
 
-        const correctNumandPosition = "Correct number and position"
-        const correctNumOnly = "Correct Number"
-        const noCorrectGuesses = "Incorrect, please try again"
+        const correctNumandPosition = "Correct Number and Correct Position present"
+        const correctNumOnly = "Correct Number, but Wrong Position present"
+        const noCorrectGuesses = "Incorrect, Please Try Again"
 
         //invalid selection
         if (attempts > 1 && (currentGuess.includes(NaN) || currentGuess.includes(null))) {
@@ -70,9 +69,10 @@ export default class Mastermind extends Component {
             this.setState({ status: 'won' });
         } else if (attempts <= 1) {
             this.setState({ status: 'lost', attempts: 0 });
-        } else {
+        } else { //still playing
             const history = {};
             let message;
+
             for (let i = 0; i < winningCombination.length; i++) {
                 const winningNum = winningCombination[i];
                 const playerGuess = currentGuess[i];
@@ -86,10 +86,13 @@ export default class Mastermind extends Component {
                     message = noCorrectGuesses;
                 }
             }
+
+            //populates history obj
             history.feedback = message;
             history.guess = currentGuess;
             console.log('HISTORY', history)
-            //decrement attempts remaining and build history
+
+            //decrement attempts remaining and builds previousAttempts array
             this.setState(prevState => {
                 return {
                     attempts: prevState.attempts - 1,
@@ -106,9 +109,11 @@ export default class Mastermind extends Component {
         console.log(currentGuess, previousAttempts)
         return (
             <div>
-                <div >{winningCombination} correct combo</div>
-                <div >{attempts} attempts remaining</div>
-                {status === 'lost' ? <div>LOSE</div> : null}
+                <div>{winningCombination} correct combo</div>
+                <div>{attempts} Attempts Remaining</div>
+                {status === 'won' ? <div> You Got It! <span role="img" aria-label="celebrate">🥳</span></div> : null}
+                {status === 'lost' ? <div>Better Luck Next Time</div> : null}
+
                 <PlayerInput
                     currentGuess={currentGuess}
                     handleGuess={this.handleGuess}

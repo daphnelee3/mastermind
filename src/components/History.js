@@ -7,8 +7,7 @@ export const History = ({ previousAttempts }) => {
             {previousAttempts.length > 0 ?
                 previousAttempts.map((object, idx) => (
                     <div key={idx}>
-                        <div>{object.guess} </div>
-                        <div>{object.feedback} </div>
+                        <div>You Guessed: {object.guess} - {object.feedback}</div>
                     </div>)) : 'none'}
         </div>
     )

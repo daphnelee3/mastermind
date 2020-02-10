@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -14,21 +14,40 @@
 }
 
 .App-header {
+  /* linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.5)),  */
   /* background-image: url("https://c2.staticflickr.com/4/3555/3369995718_a98c02a712_b.jpg");
-  background-size: cover;
-  opacity: 0.9; */
-  background-color: #282c34;
+  background-size: cover;*/
+  opacity: 0.9; 
+  position: relative;
+  z-index: 1;
+  background-color: #A9B7BC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 40px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #081012;
+}
+
+.App-header:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("https://c2.staticflickr.com/4/3555/3369995718_a98c02a712_b.jpg");
+  background-size: cover;
+  opacity: .8;
 }
 
 .App-link {
-  color: #61dafb;
+  font-size: 20px;
+  color: #15292E;
+  position: absolute;
+  bottom: 30px;
 }
 
 @keyframes App-logo-spin {
@@ -38,4 +57,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.selectButton {
+  min-width: 12em;
+  position: relative;
+  display: inline-block;
+  margin-right: .5em;
+  min-height: 5em;
+  max-height: 5em;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  color: #081012;
+  border: .06em solid;
+  border-radius: 1em;
+  transition: 0.3s all ease-in-out;
+  font-size:14px;
+}
+
+.submitButton {
+	background:linear-gradient(to bottom, #79bbff 5%, #2f6ba8 100%);
+  background-color:#79bbff;
+  border-left: 20px;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:3px 10px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+  margin: 5px;
+}
+.submitButton:hover {
+	background:linear-gradient(to bottom, #2f6ba8 5%, #79bbff 100%);
+	background-color:#2f6ba8;
+}
+.submitButton:active {
+	position:relative;
+	top:1px;
 }
