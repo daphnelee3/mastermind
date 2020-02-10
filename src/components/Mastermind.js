@@ -16,35 +16,49 @@ export default class Mastermind extends Component {
         }
         this.handleGuess = this.handleGuess.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetGame = this.resetGame.bind(this);
+        this.getCombo = this.getCombo.bind(this);
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        this.getCombo();
+    }
+
+    async getCombo(isReset = false) {
         try {
             const { data } = await axios.get('https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new');
             const numbers = data.split('\n')
             numbers.pop()
             const integers = numbers.map(num => parseInt(num)) //parsed into an array of nums
-            this.setState({ winningCombination: integers });
+            if (!isReset) {
+                this.setState({ winningCombination: integers });
+            } else {
+                this.setState({
+                    winningCombination: integers,
+                    currentGuess: [null, null, null, null],
+                    attempts: 10,
+                    previousAttempts: [],
+                    status: 'playing'
+                });
+            }
         } catch {
-            console.log('error generating number')
+            console.log('error generating number');
         }
     }
 
+    //updates currentGuess array upon number selections
     handleGuess(guessIdx, event) {
         const newGuess = this.state.currentGuess.slice()
         newGuess[guessIdx] = parseInt(event.target.value)
         this.setState({ currentGuess: newGuess })
     }
 
-    //vvv separate into multiple methods to call
-    //decrement attempts, currentGuess & msg into previousAttempts, check status, reset currentGuess
-    //push feedback in previousAttempts
     handleSubmit(event) {
         const { attempts, winningCombination, currentGuess } = this.state;
         event.preventDefault();
 
-        const correctNumandPosition = "Correct Number and Correct Position present"
-        const correctNumOnly = "Correct Number, but Wrong Position present"
+        const correctNumandPosition = "Correct Number and Correct Position"
+        const correctNumOnly = "Correct Number, but Wrong Position"
         const noCorrectGuesses = "Incorrect, Please Try Again"
 
         //invalid selection
@@ -100,19 +114,22 @@ export default class Mastermind extends Component {
             });
             console.log(winningCombination)
         }
+    }
 
-
+    resetGame() {
+        this.getCombo(true)
     }
 
     render() {
         const { winningCombination, currentGuess, attempts, previousAttempts, status, invalidGuess } = this.state
         return (
             <div>
-                <h1>MASTERMIND</h1>
+                <h3>MASTERMIND</h3>
                 <div>{winningCombination} correct combo</div>
                 <div className="attempts-left">{attempts} Attempts Remaining</div>
                 {status === 'won' ? <div> You Got It! <span role="img" aria-label="celebrate">🥳</span></div> : null}
                 {status === 'lost' ? <div>Better Luck Next Time</div> : null}
+                {status !== 'playing' ? <button type="button" onClick={this.resetGame}>Play Again</button> : null}
 
                 <PlayerInput
                     currentGuess={currentGuess}
