@@ -1,7 +1,7 @@
 import React from 'react'
-import { NumberSelectors } from './NumberSelectors'
+import NumberSelectors from './NumberSelectors'
 
-export const PlayerInput = ({ currentGuess, handleGuess, handleSubmit }) => {
+const PlayerInput = ({ currentGuess, handleGuess, handleSubmit }) => {
     return (
         <div>
             {currentGuess.map((digit, idx) => (
@@ -15,3 +15,5 @@ export const PlayerInput = ({ currentGuess, handleGuess, handleSubmit }) => {
         </div>
     )
 }
+
+export default PlayerInput

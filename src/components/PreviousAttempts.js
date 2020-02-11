@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const History = ({ previousAttempts }) => {
+const PreviousAttempts = ({ previousAttempts }) => {
     return (
-        <div className="history">
+        <div className="previous-attempts">
             <div>Previous Attempts</div>
             {previousAttempts.length > 0 ?
                 previousAttempts.map((object, idx) => (
@@ -12,3 +12,5 @@ export const History = ({ previousAttempts }) => {
         </div>
     )
 }
+
+export default PreviousAttempts

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { PlayerInput } from './PlayerInput'
-import { History } from './History'
+import PlayerInput from './PlayerInput'
+import PreviousAttempts from './PreviousAttempts'
 
 export default class Mastermind extends Component {
     constructor(props) {
@@ -136,7 +136,7 @@ export default class Mastermind extends Component {
                     handleGuess={this.handleGuess}
                     handleSubmit={this.handleSubmit} />
                 {invalidGuess === true ? <div> Invalid Selection. Please Choose 4 Numbers!</div> : ''}
-                <History
+                <PreviousAttempts
                     previousAttempts={previousAttempts} />
             </div>
         )
