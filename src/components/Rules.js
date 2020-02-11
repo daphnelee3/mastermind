@@ -2,13 +2,14 @@ import React from "react";
 
 const Rules = () => {
     return (
-        <div className="rules">
+        <div className="App">
             <main>
                 <h2>How To Play</h2>
-                <p>
-                    I am the codemaker, and you will have 10 tries to try to break the four-digit
-                    combo
-    </p>
+                <p>Please select from the three available difficulty levels: easy, medium, and hard.</p>
+                <p>The codemaker will generate a four digit number for you to crack!</p>
+                <p>The number of attempts depends on your chosen difficulty level.</p>
+                <p>Good Luck!</p>
+
             </main>
         </div>
     );
