@@ -39,7 +39,7 @@ Upon submitting a guess, the *handleSumbit* method checks for a few possible cas
 
 Lastly, if status is still in playing mode, the current guess and proper feedback is populated into the history object. The history object is then pushed into the *previousAttempts* array so the player may keep track of prior guesses and number of attempts decrements. 
 
-![walkthrough](/public/mastermind_demo.gif)
+<!-- ![walkthrough](/public/mastermind_demo.gif)  doesn't work :(-->
 
 ## Future Considerations
 
@@ -47,7 +47,7 @@ An extension I was able to implement was the adjustment of difficulty levels bas
 
 On game reset, everything besides the select values reset properly. To fix this, I could also track the values by putting it on state.
 
-Other than that, changing the numbers to colors and providing more specific feedback would be nice additions!
+Other than that, changing the numbers to colors and providing more specific feedback on each guess would be nice additions!
 
 ## Learn More
 
