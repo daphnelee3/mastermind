@@ -10,9 +10,10 @@ const GamePlay = ({ difficulty, handleDifficulty }) => {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <button type="button" value="easy" onClick={handleDifficulty}>easy</button>
-                <button type="button" value="medium" onClick={handleDifficulty}>medium</button>
-                <button type="button" value="hard" onClick={handleDifficulty}>hard</button>
+
+                <button type="button" className="mode-button" value="easy" onClick={handleDifficulty}>easy</button>
+                <button type="button" className="mode-button" value="medium" onClick={handleDifficulty}>medium</button>
+                <button type="button" className="mode-button" value="hard" onClick={handleDifficulty}>hard</button>
                 <div>
                     {difficulty === 'easy' && <Mastermind />}
                     {difficulty === 'medium' && <MediumMode />}
@@ -25,9 +26,8 @@ const GamePlay = ({ difficulty, handleDifficulty }) => {
                     rel="noopener noreferrer"
                 >
                     See How This Game Was Built
-        </a>
+                </a>
             </header>
-
         </div>
     );
 };

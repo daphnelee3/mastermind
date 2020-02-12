@@ -33,7 +33,11 @@ export default class App extends Component {
           </nav>
           <main>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/"
+                render={(props) => (<HomePage {...props}
+                  difficulty={this.state.difficulty}
+                  handleDifficulty={this.handleDifficulty} />)}
+              />/>
               <Route exact path="/play"
                 render={(props) => (<GamePlay {...props}
                   difficulty={this.state.difficulty}
