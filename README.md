@@ -17,11 +17,13 @@ npm install
 
 npm start
 
-Visit http://localhost:3000 to play Mastermind!
+Visit http://localhost:3000 to play
 ```
 
 ## Project Overview
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application was initialized using the [Create React App](https://github.com/facebook/create-react-app). At the top level, the ReactDOM used in the index file allows for DOM manipulation.The render method pulls a React element into the DOM in the supplied container and returns a reference to the component. In this case, we grab the html element with an id of "root" and render the App component. 
+
+In <App/>,  
 
 
 ## Learn More

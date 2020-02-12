@@ -13,16 +13,12 @@ export default class App extends Component {
     this.state = {
       attempts: 10,
       difficulty: '',
-      startGame: false
     }
     this.handleDifficulty = this.handleDifficulty.bind(this)
   }
 
   handleDifficulty(event) {
-    this.setState({
-      difficulty: event.target.value,
-      startGame: true
-    })
+    this.setState({ difficulty: event.target.value })
   }
 
   render() {
