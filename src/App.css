@@ -144,15 +144,17 @@ img {
 }
 
 .homepage {
-  background-image: url(https://media.giphy.com/media/5T06ftQWtCMy0XFaaI/giphy.gif);
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/wallpapers/Gold-Glitter-Backgrounds-for-Desktop-5.jpg);
   background-size: contain;
   display: flex;
   flex-direction: column;
   font-size: 25px;
   font-family: 'Prata', serif;
-  align-items: center;
-  margin: 10px;
   min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  align-items: center;
 }
 
 .mode-button {
@@ -171,10 +173,13 @@ img {
 }
 
 .rules, .history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
   font-family: 'Prata', serif;
   font-size: 20px;
   background-color: rgb(255, 248, 224);
   min-height: 100vh;
-  padding: 5px;
+  padding: 5px 20px;
 }
