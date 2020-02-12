@@ -12,13 +12,13 @@ export default class App extends Component {
     super()
     this.state = {
       attempts: 10,
-      difficulty: 'easy'
+      difficulty: ''
     }
     this.handleDifficulty = this.handleDifficulty.bind(this)
   }
 
   handleDifficulty(event) {
-    console.log("HEY")
+    console.log(this.state.difficulty)
     this.setState({ difficulty: event.target.value })
   }
 
@@ -34,9 +34,10 @@ export default class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/play" component={GamePlay}
-                difficulty={this.state.difficulty}
-                handleDifficulty={this.handleDifficulty}
+              <Route exact path="/play"
+                render={(props) => (<GamePlay {...props}
+                  difficulty={this.state.difficulty}
+                  handleDifficulty={this.handleDifficulty} />)}
               />
               <Route exact path="/rules" component={Rules} />
               <Route exact path="/history" component={History} />

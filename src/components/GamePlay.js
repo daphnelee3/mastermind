@@ -5,17 +5,18 @@ import MediumMode from './MediumMode'
 import HardMode from './HardMode'
 
 
-const GamePlay = ({ difficulty }) => {
+const GamePlay = ({ difficulty, handleDifficulty }) => {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
+                <button type="button" value="easy" onClick={handleDifficulty}>easy</button>
+                <button type="button" value="medium" onClick={handleDifficulty}>medium</button>
+                <button type="button" value="hard" onClick={handleDifficulty}>hard</button>
                 <div>
-                    <Mastermind />
                     {difficulty === 'easy' && <Mastermind />}
                     {difficulty === 'medium' && <MediumMode />}
                     {difficulty === 'hard' && <HardMode />}
-
                 </div>
                 <a
                     className="App-link"
@@ -26,7 +27,6 @@ const GamePlay = ({ difficulty }) => {
                     See How This Game Was Built
         </a>
             </header>
-
 
         </div>
     );
