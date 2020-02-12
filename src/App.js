@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch, Redirect } from "react-router-dom";
 import GamePlay from './components/GamePlay';
 import HomePage from './components/HomePage';
 import Rules from './components/Rules';
@@ -12,13 +12,17 @@ export default class App extends Component {
     super()
     this.state = {
       attempts: 10,
-      difficulty: ''
+      difficulty: '',
+      startGame: false
     }
     this.handleDifficulty = this.handleDifficulty.bind(this)
   }
 
   handleDifficulty(event) {
-    this.setState({ difficulty: event.target.value })
+    this.setState({
+      difficulty: event.target.value,
+      startGame: true
+    })
   }
 
   render() {
@@ -35,15 +39,15 @@ export default class App extends Component {
               <Route exact path="/"
                 render={(props) => (<HomePage {...props}
                   difficulty={this.state.difficulty}
-                  handleDifficulty={this.handleDifficulty} />)}
-              />/>
+                  handleDifficulty={this.handleDifficulty} />)} />
               <Route exact path="/play"
                 render={(props) => (<GamePlay {...props}
                   difficulty={this.state.difficulty}
-                  handleDifficulty={this.handleDifficulty} />)}
-              />
+                  handleDifficulty={this.handleDifficulty} />)}>
+              </Route>
               <Route exact path="/rules" component={Rules} />
               <Route exact path="/history" component={History} />
+              <Redirect to="/" />
             </Switch>
           </main>
         </div>

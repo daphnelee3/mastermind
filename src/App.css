@@ -26,7 +26,7 @@ img {
 .App-logo {
   height: 25vmin;
   pointer-events: none;
-  margin: 10px;
+  margin: 7px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -79,12 +79,16 @@ img {
 }
 
 .attempts-left {
-  border: 1px solid #555555;
+  border: 1px solid #255588;
   width: 50%;
   position: relative;
   left: 25%;
   background-color: #FFFFE0;
-  margin: 10px;
+  margin: 5px;
+  font-size: 23px;
+  font-family: 'Farro', sans-serif;
+  color: #555555;
+  padding: 2px;
 }
 
 .select-button {
@@ -131,10 +135,11 @@ img {
 }
 
 .previous-attempts {
-    border: 1px solid #555555;
+    border: 1px solid #255588;
     padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Farro', sans-serif;
     color: #555555;
     background-color: #FFFFE0;
     text-align: center;
@@ -169,7 +174,7 @@ img {
 	font-weight:bold;
 	padding:3px 10px;
 	text-decoration:none;
-  margin: 5px;
+  margin: 3px;
 }
 
 .rules, .history {
@@ -182,4 +187,5 @@ img {
   background-color: rgb(255, 248, 224);
   min-height: 100vh;
   padding: 5px 20px;
+  color: #255588;
 }
