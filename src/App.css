@@ -10,12 +10,14 @@ nav {
   justify-content: space-around;
 }
 
-/* main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
+img {
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+}
 
 .App {
   text-align: center;
@@ -142,11 +144,37 @@ nav {
 }
 
 .homepage {
+  background-image: url(https://media.giphy.com/media/5T06ftQWtCMy0XFaaI/giphy.gif);
+  background-size: contain;
   display: flex;
   flex-direction: column;
+  font-size: 25px;
+  font-family: 'Prata', serif;
   align-items: center;
   margin: 10px;
+  min-height: 100vh;
 }
 
 .mode-button {
+  background-color:rgb(101, 111, 116);
+  border-left: 20px;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:3px 10px;
+	text-decoration:none;
+  margin: 5px;
+}
+
+.rules, .history {
+  text-align: center;
+  font-family: 'Prata', serif;
+  font-size: 20px;
+  background-color: rgb(255, 248, 224);
+  min-height: 100vh;
+  padding: 5px;
 }

@@ -121,11 +121,10 @@ export default class Mastermind extends Component {
     }
 
     render() {
-        const { winningCombination, currentGuess, attempts, previousAttempts, status, invalidGuess } = this.state
+        const { currentGuess, attempts, previousAttempts, status, invalidGuess } = this.state
         return (
             <div>
                 <h3>MASTERMIND</h3>
-                <div>{winningCombination} correct combo</div>
                 <div className="attempts-left">{attempts} Attempts Remaining</div>
                 {status === 'won' ? <div> You Got It! <span role="img" aria-label="celebrate">🥳</span></div> : null}
                 {status === 'lost' ? <div>Better Luck Next Time</div> : null}

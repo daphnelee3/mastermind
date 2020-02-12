@@ -18,7 +18,6 @@ export default class App extends Component {
   }
 
   handleDifficulty(event) {
-    console.log(this.state.difficulty)
     this.setState({ difficulty: event.target.value })
   }
 
@@ -28,7 +27,7 @@ export default class App extends Component {
         <div>
           <nav>
             <Link to="/rules">Rules</Link>
-            <Link to="/play">Play</Link>
+            <Link to="/play">Play Game</Link>
             <Link to="/history">History</Link>
           </nav>
           <main>
