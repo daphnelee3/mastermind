@@ -7,7 +7,7 @@ import HardMode from './HardMode'
 const HomePage = ({ difficulty, handleDifficulty }) => {
     return (
         <div className="homepage">
-            <img src="https://www4.lunapic.com/editor/working/158152321781932375?4005816143" alt="brain" />
+            <img src="brain.png" alt="brain" style={{ width: 300, height: 300 }} />
             <h1>Welcome to Mastermind!</h1>
             <h3>
                 Let's Play

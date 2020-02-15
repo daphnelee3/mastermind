@@ -45,7 +45,7 @@ Lastly, if *status* is still in 'playing' mode, the current guess and proper fee
 
 An extension I was able to implement was the adjustment of difficulty levels based on the number of attempts a player is given. I accomplished this through the creation of three separate components that adjusted only for the initial state of *attempts*, leading to a lot of repetitve code. However, if I were to incorporate more features such as the length of a winning combination and a timer in accordance to their level, this may come in handy for separating out the logic. 
 
-On game reset, everything besides the select values reset properly. To fix this, I could also track the values by putting it on state.
+On game reset, everything besides the select values reset properly. To fix this, I could also track the select values by putting it on state.
 
 Other than that, changing the numbers to colors and providing more specific feedback on each guess would be nice additions!
 
