@@ -149,7 +149,7 @@ img {
 }
 
 .homepage {
-  background-image: url(https://www.pixelstalk.net/wp-content/uploads/wallpapers/Gold-Glitter-Backgrounds-for-Desktop-5.jpg);
+  background-image: url('Gold-Glitter.jpeg');
   background-size: contain;
   display: flex;
   flex-direction: column;
