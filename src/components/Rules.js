@@ -9,7 +9,8 @@ const Rules = () => {
                 <p>The codemaker will generate a four digit number for you to crack.</p>
                 <p>Your number of tries depends on your chosen difficulty level.</p>
                 <p>Good Luck!</p>
-                <img src="https://media.giphy.com/media/SJkmbhE2ytRDaT1iyG/giphy.gif" alt="you ready?" />
+                <img src="https://media.giphy.com/media/SJkmbhE2ytRDaT1iyG/giphy.gif" alt="you ready?"
+                    style={{ width: 300, height: 300, marginTop: 100 }} />
             </main>
         </div>
     );

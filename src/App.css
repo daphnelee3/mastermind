@@ -183,9 +183,9 @@ img {
   flex-wrap: wrap;
   text-align: center;
   font-family: 'Prata', serif;
-  font-size: 20px;
+  font-size: 22px;
   background-color: rgb(255, 248, 224);
   min-height: 100vh;
-  padding: 5px 20px;
+  padding: 20px 20px;
   color: #255588;
 }

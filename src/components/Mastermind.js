@@ -28,7 +28,7 @@ export default class Mastermind extends Component {
         try {
             const { data } = await axios.get('https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new');
             const numbers = data.split('\n')
-            numbers.pop()
+            numbers.pop() //pop off white space at end
             const integers = numbers.map(num => parseInt(num)) //parsed into an array of nums
             if (!isReset) {
                 this.setState({ winningCombination: integers });
@@ -48,7 +48,7 @@ export default class Mastermind extends Component {
 
     //updates currentGuess array upon number selections
     handleGuess(guessIdx, event) {
-        const newGuess = this.state.currentGuess.slice()
+        const newGuess = this.state.currentGuess.slice() //makes a copy
         newGuess[guessIdx] = parseInt(event.target.value)
         this.setState({ currentGuess: newGuess })
     }
