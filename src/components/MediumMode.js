@@ -25,8 +25,17 @@ export default class Mastermind extends Component {
     }
 
     async getCombo(isReset = false) {
+        const difficulty = this.props.difficulty;
+        let amountToGenerate = '';
+        if (difficulty === 'easy') {
+            amountToGenerate = '5';
+        } else if (difficulty === 'medium') {
+            amountToGenerate = '7';
+        } else if (difficulty === 'hard') {
+            amountToGenerate = '9';
+        }
         try {
-            const { data } = await axios.get('https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new');
+            const { data } = await axios.get(`https://www.random.org/integers/?num=4&min=0&max=${amountToGenerate}&col=1&base=10&format=plain&rnd=new`);
             const numbers = data.split('\n')
             numbers.pop()
             const integers = numbers.map(num => parseInt(num)) //parsed into an array of nums
@@ -133,7 +142,8 @@ export default class Mastermind extends Component {
                 <PlayerInput
                     currentGuess={currentGuess}
                     handleGuess={this.handleGuess}
-                    handleSubmit={this.handleSubmit} />
+                    handleSubmit={this.handleSubmit}
+                    difficulty={this.props.difficulty} />
                 {invalidGuess === true ? <div> Invalid Selection. Please Choose 4 Numbers!</div> : ''}
                 <PreviousAttempts
                     previousAttempts={previousAttempts} />

@@ -11,7 +11,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      attempts: 10,
+      // attempts: 10,
       difficulty: '',
     }
     this.handleDifficulty = this.handleDifficulty.bind(this)

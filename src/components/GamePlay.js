@@ -15,9 +15,12 @@ const GamePlay = ({ difficulty, handleDifficulty }) => {
                 <button type="button" className="mode-button" value="medium" onClick={handleDifficulty}>medium</button>
                 <button type="button" className="mode-button" value="hard" onClick={handleDifficulty}>hard</button>
                 <div>
-                    {difficulty === 'easy' && <Mastermind />}
-                    {difficulty === 'medium' && <MediumMode />}
-                    {difficulty === 'hard' && <HardMode />}
+                    {difficulty === 'easy' && <Mastermind
+                        difficulty={difficulty} />}
+                    {difficulty === 'medium' && <MediumMode
+                        difficulty={difficulty} />}
+                    {difficulty === 'hard' && <HardMode
+                        difficulty={difficulty} />}
                 </div>
                 <a
                     className="App-link"

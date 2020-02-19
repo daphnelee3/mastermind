@@ -1,11 +1,12 @@
 import React from 'react'
 import NumberSelectors from './NumberSelectors'
 
-const PlayerInput = ({ currentGuess, handleGuess, handleSubmit }) => {
+const PlayerInput = ({ currentGuess, handleGuess, handleSubmit, difficulty }) => {
+    // debugger;
     return (
         <div>
             {currentGuess.map((digit, idx) => (
-                <NumberSelectors key={idx} guessIdx={idx} handleGuess={handleGuess} />
+                <NumberSelectors key={idx} guessIdx={idx} handleGuess={handleGuess} difficulty={difficulty} />
             ))}
             <button
                 className="submit-button"
