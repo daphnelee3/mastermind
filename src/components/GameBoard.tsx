@@ -2,6 +2,7 @@ import { useGameContext } from '../GameContext';
 import getColorClass from '../getColorClass';
 import { Color } from '../types';
 import ColorSelector from './ColorSelector';
+import SubmitGuess from './SubmitGuess';
 
 type GameBoardProps = { onFeedbackSubmit: () => void };
 
@@ -23,6 +24,7 @@ const GameBoard = ({ onFeedbackSubmit }: GameBoardProps) => {
         </div>
       ))}
       <ColorSelector />
+        <SubmitGuess onFeedbackSubmit={onFeedbackSubmit} />
     </div>
   );
 };

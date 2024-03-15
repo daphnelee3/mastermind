@@ -1,5 +1,6 @@
 import { Dispatch, ReactNode, createContext, useContext, useReducer } from 'react';
 import { Feedback } from './types';
+import calculateFeedback from './calculateFeedback';
 import createNewBoard from './createNewBoard';
 import generateSecretCode from './generateSecretCode';
 
