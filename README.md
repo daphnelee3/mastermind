@@ -1,32 +1,13 @@
 # Mastermind
 
-# React + TypeScript + Vite
+You are the codebreaker and your goal is to break the secret code provided by the codemaker. At the start of the game, you are given 10 attempts. After each guess, the codemaker provides feedback to help you deduce the correct code.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Feedback consists of two components: exact matches represented by black circles where the guess is the correct color and in the correct position. Partial matches represented by white circles where the guess is the correct color but in the wrong position. Good luck!
 
-Currently, two official plugins are available:
+## Built with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Typescript, React, Tailwind CSS, Vite
 
-## Expanding the ESLint configuration
+## Play here:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+[Mastermind](https://masterminddl.netlify.app)
