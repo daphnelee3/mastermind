@@ -1,6 +1,6 @@
 import { useGameContext } from '../GameContext';
 import { colors } from '../constants';
-import getColorClass from '../getColorClass';
+import getColorClass from '../utils/getColorClass';
 import { Color } from '../types';
 
 const ColorSelector = () => {

@@ -9,7 +9,7 @@ const GameRules = () => {
   };
 
   return (
-    <div className="max-w-[200px]">
+    <div className="w-56">
       <button onClick={handleGamesRules} className="flex items-center">
         {isRulesOpen ? <FiChevronUp className="mr-1" /> : <FiChevronDown className="mr-1" />}
         {isRulesOpen ? 'Hide Game Rules' : 'Show Game Rules'}

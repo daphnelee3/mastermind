@@ -1,4 +1,4 @@
-import { Feedback } from './types';
+import { Feedback } from '../types';
 
 const calculateFeedback = (guess: string[], secretCode: string[]): Feedback => {
   let exactMatch = 0;

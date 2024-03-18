@@ -1,8 +1,8 @@
 import { Dispatch, ReactNode, createContext, useContext, useReducer } from 'react';
 import { Feedback } from './types';
-import calculateFeedback from './calculateFeedback';
-import createNewBoard from './createNewBoard';
-import generateSecretCode from './generateSecretCode';
+import calculateFeedback from './utils/calculateFeedback';
+import createNewBoard from './utils/createNewBoard';
+import generateSecretCode from './utils/generateSecretCode';
 
 interface Row {
   guess: string[];

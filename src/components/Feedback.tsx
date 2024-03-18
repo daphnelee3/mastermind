@@ -1,10 +1,14 @@
 import { useGameContext } from '../GameContext';
 
-const Feedback = () => {
+type FeedbackProps = {
+  showFeedback: boolean;
+};
+
+const Feedback = ({ showFeedback }: FeedbackProps) => {
   const { state } = useGameContext();
 
   return (
-    <div className="p-4">
+    <div className={`${!showFeedback && 'invisible'} w-56 p-4 mr-10}`}>
       {state.rows.slice(0, state.activeRowIdx).map((row, index) => (
         <div key={index} className="mt-8">
           {row.feedback && (

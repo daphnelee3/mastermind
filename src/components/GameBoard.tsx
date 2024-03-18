@@ -1,5 +1,5 @@
 import { useGameContext } from '../GameContext';
-import getColorClass from '../getColorClass';
+import getColorClass from '../utils/getColorClass';
 import { Color } from '../types';
 import ColorSelector from './ColorSelector';
 import ResetRowButton from './ResetRowButton';

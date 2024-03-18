@@ -1,4 +1,4 @@
-import { Color } from './types';
+import { Color } from '../types';
 
 const getColorClass = (color: Color): string => {
   switch (color) {

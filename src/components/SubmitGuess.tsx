@@ -34,13 +34,14 @@ const SubmitGuess = ({ onFeedbackSubmit }: SubmitGuessProps) => {
   return (
     <div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <p className="p-6">Please fill all circles before submitting.</p>
+        <div className="p-6">Please fill all circles before submitting.</div>
       </Modal>
       <Modal isOpen={gameStatus === 'win'} onClose={() => setGameStatus('playing')}>
-        <p className="p-6">You Win! 🥳</p>
+        <div className="p-6">You Win! 🥳</div>
       </Modal>
       <Modal isOpen={gameStatus === 'lose'} onClose={() => setGameStatus('playing')}>
-        <p className="p-6">Game over. Better luck next time!</p>
+        <div className="p-6">Game over. Better luck next time!</div>
+        <div className="px-6 pb-6">The secret code was: {state.secretCode.join(', ')}</div>
       </Modal>
       <button className={'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'} onClick={handleSubmit}>
         Submit Guess

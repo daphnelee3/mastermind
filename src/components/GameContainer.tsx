@@ -16,16 +16,16 @@ export const GameContainer = () => {
       <h1 className="ml-8 p-6 text-3xl text-center">Mastermind</h1>
       <main className="flex justify-center  h-screen">
         <div className="flex items-start">
-          <div className="flex flex-col items-start mr-10">
+          <div className="flex flex-col items-start mx-10">
             <NewGameButton />
             <GameRules />
           </div>
           <GameBoard onFeedbackSubmit={handleFeedbackDisplay} />
-          {showFeedback && <Feedback />}
+          <Feedback showFeedback={showFeedback} />
         </div>
       </main>
       <footer className="flex justify-center items-center">
-        <a className="underline text-center" href="https://github.com/daphnelee3/mastermind" target="_blank">
+        <a className="underline text-center p-2" href="https://github.com/daphnelee3/mastermind" target="_blank">
           See repo
         </a>
       </footer>
