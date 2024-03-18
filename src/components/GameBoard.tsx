@@ -2,6 +2,7 @@ import { useGameContext } from '../GameContext';
 import getColorClass from '../getColorClass';
 import { Color } from '../types';
 import ColorSelector from './ColorSelector';
+import ResetRowButton from './ResetRowButton';
 import SubmitGuess from './SubmitGuess';
 
 type GameBoardProps = { onFeedbackSubmit: () => void };
@@ -24,7 +25,10 @@ const GameBoard = ({ onFeedbackSubmit }: GameBoardProps) => {
         </div>
       ))}
       <ColorSelector />
+      <div className="flex justify-center gap-4 mt-4">
         <SubmitGuess onFeedbackSubmit={onFeedbackSubmit} />
+        <ResetRowButton />
+      </div>
     </div>
   );
 };
