@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import GameBoard from './GameBoard';
 import Feedback from './Feedback';
+import NewGameButton from './NewGameButton';
+import GameRules from './GameRules';
 
 export const GameContainer = () => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -14,6 +16,10 @@ export const GameContainer = () => {
       <h1 className="ml-8 p-6 text-3xl text-center">Mastermind</h1>
       <main className="flex justify-center  h-screen">
         <div className="flex items-start">
+          <div className="flex flex-col items-start mr-10">
+            <NewGameButton />
+            <GameRules />
+          </div>
           <GameBoard onFeedbackSubmit={handleFeedbackDisplay} />
           {showFeedback && <Feedback />}
         </div>
